@@ -1,16 +1,36 @@
 import Button from "./Button";
 
-export default function BlogItem({ blog, onDelete }) {
+export default function BlogItem({ blog, onDelete, onEdit }) {
   return (
-    <article>
-      <img className="blog-image" src={blog.image} alt={blog.title} />
+    <article className="blog-card">
+      <img
+        className="blog-image"
+        src={blog.image}
+        alt={`Cover image for ${blog.title}`}
+      />
 
       <h2>{blog.title}</h2>
 
-      <p>{blog.title}</p>
+      <p>{blog.description}</p>
 
-      <Button>Edit</Button>
-      <Button onClick={() => onDelete(blog.id)}>Delete</Button>
+      <Button className="edit-button" onClick={() => onEdit(blog.id)}>
+        Edit
+      </Button>
+
+      <Button
+        className="delete-button"
+        onClick={() => {
+          const confirmed = window.confirm(
+            "Are you sure you want to delete this blog post?",
+          );
+
+          if (confirmed) {
+            onDelete(blog.id);
+          }
+        }}
+      >
+        Delete
+      </Button>
     </article>
   );
 }
