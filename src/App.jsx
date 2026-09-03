@@ -9,13 +9,17 @@ export default function App() {
   function addBlogs(blog) {
     setBlogs([...blogs, blog]);
   }
+
+  function deleteBlog(id) {
+    setBlogs(blogs.filter((blog) => blog.id !== id));
+  }
   return (
     <div>
       <h1>Blog Post Manager</h1>
       <p>Total Posts: {blogs.length}</p>
 
       <BlogForm onAddBlog={addBlogs} />
-      <BlogList blogs={blogs} />
+      <BlogList blogs={blogs} onDelete={deleteBlog} />
     </div>
   );
 }
