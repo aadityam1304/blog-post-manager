@@ -1,178 +1,369 @@
+/* ================================
+   PAGE
+================================ */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dbeafe, #eef2ff, #f0fdf4);
+  color: #1e293b;
 }
 
 #root {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 20px;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
+
+/* ================================
+   MAIN HEADER
+================================ */
 
 h1 {
-  margin-bottom: 30px;
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 36px;
+  color: #0f172a;
 }
 
-h2 {
-  margin-top: 0;
+#root > p {
+  margin: 0 0 35px;
+  text-align: center;
+  font-size: 18px;
+  color: #475569;
 }
 
-/* Blog Cards */
-.blog-card {
-  width: 100%;
-  padding: 20px;
-  margin: 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
+/* ================================
+   BLOG FORM
+================================ */
 
-.blog-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.blog-card .blog-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  /* border-radius: 6px; */
-}
-
-.blog-card h2 {
-  margin: 15px 0 10px;
-  font-size: 22px;
-}
-
-.blog-card p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-/* Blog List */
-.blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-/* Form */
 form {
+  width: 100%;
   max-width: 500px;
-  padding: 20px;
-  margin-bottom: 30px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  margin: 0 auto 50px;
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
 }
+
+form h2 {
+  margin: 0 0 25px;
+  text-align: center;
+  color: #0f172a;
+}
+
+/* ================================
+   INPUTS
+================================ */
 
 form input,
 form textarea {
   display: block;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+
+  padding: 13px;
+  margin-bottom: 16px;
+
   box-sizing: border-box;
+
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  color: #1e293b;
+
+  background: #f8fafc;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
 }
 
 form input:focus,
 form textarea:focus {
   outline: none;
-  border-color: #333;
+
+  border-color: #6366f1;
+
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
 }
 
 form textarea {
-  min-height: 120px;
+  min-height: 130px;
   resize: vertical;
 }
 
-/* Image Preview */
+/* ================================
+   IMAGE PREVIEW
+================================ */
+
 .image-preview {
+  display: block;
+
   width: 100%;
   max-height: 250px;
+
   object-fit: cover;
-  margin-bottom: 15px;
-  border-radius: 6px;
+
+  margin-bottom: 16px;
+
+  border-radius: 10px;
 }
 
-/* Character Count */
+/* ================================
+   CHARACTER COUNT
+================================ */
+
 .character-count {
   margin-top: -8px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+
   font-size: 13px;
+  color: #64748b;
 }
 
-/* Empty State */
-.empty-message {
-  padding: 20px;
-  text-align: center;
-  border: 1px dashed #ccc;
-  border-radius: 8px;
-}
+/* ================================
+   BUTTONS
+================================ */
 
-/* Error Message */
-.error-message {
-  margin: 0 0 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-/* Buttons */
 button {
-  padding: 10px 16px;
+  padding: 11px 18px;
   margin-right: 8px;
+
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+
   cursor: pointer;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 button:hover:not(:disabled) {
-  opacity: 0.85;
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+/* ================================
+   ADD POST BUTTON
+================================ */
+
+form > button[type="submit"] {
+  display: block;
+
+  margin: 0 auto;
+
+  color: #ffffff;
+  background: #6366f1;
+}
+
+/* ================================
+   CANCEL BUTTON
+================================ */
+
+form > button[type="button"] {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+/* ================================
+   ERROR MESSAGE
+================================ */
+
+.error-message {
+  margin: 15px 0 0;
+  padding: 10px;
+
+  color: #991b1b;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+
+  font-size: 14px;
+}
+
+/* ================================
+   BLOG POSTS SECTION
+================================ */
+
+.blog-list-heading {
+  margin: 0 0 25px;
+
+  text-align: center;
+
+  font-size: 28px;
+  color: #0f172a;
+}
+
+/* ================================
+   BLOG LIST
+================================ */
+
+.blog-list {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 25px;
+}
+
+/* ================================
+   BLOG CARD
+================================ */
+
+.blog-card {
+  width: 100%;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* ================================
+   BLOG IMAGE
+================================ */
+
+.blog-image {
+  display: block;
+
+  width: 100%;
+  height: 200px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+/* ================================
+   BLOG TITLE
+================================ */
+
+.blog-card h2 {
+  margin: 15px 0 10px;
+
+  font-size: 22px;
+
+  color: #0f172a;
+}
+
+/* ================================
+   BLOG DESCRIPTION
+================================ */
+
+.blog-card p {
+  margin-bottom: 20px;
+
+  line-height: 1.6;
+
+  color: #475569;
+}
+
+/* ================================
+   EDIT BUTTON
+================================ */
+
 .edit-button {
-  border: 1px solid #ccc;
-  font-weight: 600;
+  color: #ffffff;
+  background: #6366f1;
 }
 
-.edit-button:hover {
-  transform: translateY(-2px);
-}
+/* ================================
+   DELETE BUTTON
+================================ */
 
 .delete-button {
-  border: 1px solid #ccc;
-  font-weight: 600;
+  color: #ffffff;
+  background: #ef4444;
 }
 
-.delete-button:hover {
-  transform: translateY(-2px);
+/* ================================
+   EMPTY STATE
+================================ */
+
+.empty-message {
+  width: 100%;
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  color: #64748b;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
 }
 
-/* Delete Button */
-.delete-button {
-  border: 1px solid #ccc;
-  font-weight: 600;
-}
+/* ================================
+   MOBILE
+================================ */
 
-.delete-button:hover {
-  transform: translateY(-2px);
-}
-
-/* Mobile */
 @media (max-width: 600px) {
   #root {
-    padding: 20px 15px;
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  #root > p {
+    font-size: 16px;
+  }
+
+  form {
+    padding: 22px;
+  }
+
+  form h2 {
+    font-size: 22px;
+  }
+
+  .blog-list-heading {
+    font-size: 24px;
   }
 
   .blog-list {
@@ -181,5 +372,9 @@ button:disabled {
 
   .blog-card {
     padding: 15px;
+  }
+
+  .blog-image {
+    height: 180px;
   }
 }

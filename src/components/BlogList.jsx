@@ -3,7 +3,7 @@ import BlogItem from "./BlogItem";
 export default function BlogList({ blogs, onDelete, onEdit }) {
   return (
     <div>
-      <h2>Blog Post</h2>
+      <h2 className="blog-list-heading">Blog Post</h2>
 
       {blogs.length === 0 ? (
         <p className="empty-message">No Blog posts yet.</p>
