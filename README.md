@@ -1,16 +1,57 @@
-# React + Vite
+# 📝 Blog Post Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive Blog Post Manager built with **React** and **Vite**.
 
-Currently, two official plugins are available:
+The application allows users to create, view, edit, and delete blog posts. Each post can contain an image URL, title, and description.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- ➕ Add new blog posts
+- ✏️ Edit existing blog posts
+- 🗑️ Delete blog posts
+- 🔒 Delete confirmation before removing a post
+- 🖼️ Image URL validation
+- 👀 Image preview
+- 📝 Title and description validation
+- 🔢 300-character description limit
+- 📊 Character counter
+- 🔢 Total blog post count
+- 📱 Responsive design
+- 🎨 Modern UI with gradient background
+- 🔘 Reusable Button component
+- ⚡ Built with React and Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- HTML
+- CSS
+- Vite
+- Git & GitHub
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+
+```text
+blog-post-manager/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   │   ├── BlogForm.jsx
+│   │   ├── BlogList.jsx
+│   │   ├── BlogItem.jsx
+│   │   └── Button.jsx
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+│
+├── .gitignore
+├── .gitattributes
+├── index.html
+├── package.json
+├── package-lock.json
+└── README.md
+```
